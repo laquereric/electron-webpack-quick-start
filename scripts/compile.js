@@ -3,17 +3,12 @@
 const { spawn } = require('child_process');
 const path = require('path');
 
-// Create a custom environment that sets NODE_OPTIONS for webpack
-const env = {
-  ...process.env,
-  NODE_OPTIONS: '--openssl-legacy-provider'
-};
+// Use the webpack configuration with xxhash64 instead of NODE_OPTIONS
+const electronWebpackPath = path.join(__dirname, '..', 'node_modules', '.bin', 'electron-webpack');
 
 // Spawn electron-webpack
-const electronWebpackPath = path.join(__dirname, '..', 'node_modules', '.bin', 'electron-webpack');
 const child = spawn('node', [electronWebpackPath], {
-  stdio: 'inherit',
-  env: env
+  stdio: 'inherit'
 });
 
 child.on('close', (code) => {

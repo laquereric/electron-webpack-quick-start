@@ -15,6 +15,18 @@ Simply clone down this repository, install dependencies, and get started on your
 
 The use of the [yarn](https://yarnpkg.com/) package manager is **strongly** recommended, as opposed to using `npm`.
 
+### Node.js Version Requirements
+This project requires Node.js v18 for compatibility with webpack 4 and electron-webpack. If you're using a different Node.js version, you can use [nvm](https://github.com/nvm-sh/nvm) to switch:
+
+```bash
+# Install and use Node.js v18
+nvm install 18
+nvm use 18
+
+# Verify the version
+node --version  # Should show v18.x.x
+```
+
 ```bash
 # create a directory of your choice, and copy template using curl
 mkdir new-electron-webpack-project && cd new-electron-webpack-project

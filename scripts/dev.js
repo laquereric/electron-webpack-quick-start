@@ -3,17 +3,11 @@
 const { spawn } = require('child_process');
 const path = require('path');
 
-// Use cross-env to set NODE_OPTIONS for webpack but not for Electron
-const crossEnvPath = path.join(__dirname, '..', 'node_modules', '.bin', 'cross-env');
+// Use the webpack configuration with xxhash64 instead of NODE_OPTIONS
 const electronWebpackPath = path.join(__dirname, '..', 'node_modules', '.bin', 'electron-webpack');
 
-// Spawn cross-env with electron-webpack dev
-const child = spawn('node', [
-  crossEnvPath,
-  'NODE_OPTIONS=--openssl-legacy-provider',
-  electronWebpackPath,
-  'dev'
-], {
+// Spawn electron-webpack dev directly
+const child = spawn('node', [electronWebpackPath, 'dev'], {
   stdio: 'inherit'
 });
 
