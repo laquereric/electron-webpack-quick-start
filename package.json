@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
+    "check-env": "node scripts/check_env.js",
     "dev": "node scripts/dev.js",
     "compile": "node scripts/compile.js",
     "dist": "yarn compile && electron-builder",

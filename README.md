@@ -44,7 +44,10 @@ yarn
 ### Development Scripts
 
 ```bash
-# run application in development mode
+# check if your environment is compatible
+yarn check-env
+
+# run application in development mode (includes environment check)
 yarn dev
 
 # compile source code and create webpack output
@@ -56,3 +59,18 @@ yarn dist
 # `yarn compile` & create unpacked build with electron-builder
 yarn dist:dir
 ```
+
+### Environment Check
+
+The project includes an automatic environment check that runs before starting the development server. This ensures you have a compatible Node.js version and required tools.
+
+- **Required**: Node.js v18 or higher
+- **Recommended**: Node.js v18 for best compatibility with webpack 4
+- **Required**: Yarn package manager
+
+You can run the environment check independently:
+```bash
+yarn check-env
+```
+
+If you encounter compatibility issues, the check will provide specific instructions on how to fix them.
